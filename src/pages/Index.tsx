@@ -5,12 +5,14 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Camera, History, LogOut, Loader2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { useAdMob } from "@/hooks/useAdMob";
 
 const Index = () => {
   const [user, setUser] = useState<any>(null);
   const [isLoading, setIsLoading] = useState(true);
   const navigate = useNavigate();
   const { toast } = useToast();
+  const { showInterstitial } = useAdMob(); // تفعيل AdMob
 
   useEffect(() => {
     checkUser();
